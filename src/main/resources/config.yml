@@ -1,0 +1,214 @@
+# ============================================================
+#                   SellerPlugin Config
+# ============================================================
+
+# GUI Settings
+gui:
+  title: "&6&lShop"          # Title of the GUI (supports color codes)
+  pages: 3                   # Number of pages (1-10)
+  rows: 5                    # Rows per page (1-6). Row 6 is always navigation.
+
+# Items sold in the shop
+# Format per item:
+#   slot: <slot number within current page, starts at 0>
+#   page: <page number, starts at 1>
+#   material: <MATERIAL_NAME>
+#   name: "<display name>"
+#   lore:
+#     - "line1"
+#     - "line2"
+#   buy-price: <price to buy, 0 = not buyable>
+#   sell-price: <price to sell, 0 = not sellable>
+#   amount: <stack size given on purchase>
+
+items:
+
+  # ---- Page 1 ----
+  - slot: 0
+    page: 1
+    material: DIAMOND
+    name: "&b&lDiamond"
+    lore:
+      - "&7Buy: &a$50.00"
+      - "&7Sell: &c$25.00"
+    buy-price: 50.0
+    sell-price: 25.0
+    amount: 1
+
+  - slot: 1
+    page: 1
+    material: GOLD_INGOT
+    name: "&6&lGold Ingot"
+    lore:
+      - "&7Buy: &a$10.00"
+      - "&7Sell: &c$5.00"
+    buy-price: 10.0
+    sell-price: 5.0
+    amount: 1
+
+  - slot: 2
+    page: 1
+    material: IRON_INGOT
+    name: "&7&lIron Ingot"
+    lore:
+      - "&7Buy: &a$5.00"
+      - "&7Sell: &c$2.50"
+    buy-price: 5.0
+    sell-price: 2.5
+    amount: 1
+
+  - slot: 3
+    page: 1
+    material: COAL
+    name: "&8&lCoal"
+    lore:
+      - "&7Buy: &a$2.00"
+      - "&7Sell: &c$1.00"
+    buy-price: 2.0
+    sell-price: 1.0
+    amount: 1
+
+  - slot: 4
+    page: 1
+    material: EMERALD
+    name: "&a&lEmerald"
+    lore:
+      - "&7Buy: &a$30.00"
+      - "&7Sell: &c$15.00"
+    buy-price: 30.0
+    sell-price: 15.0
+    amount: 1
+
+  - slot: 5
+    page: 1
+    material: OAK_LOG
+    name: "&e&lOak Log"
+    lore:
+      - "&7Buy: &a$1.00"
+      - "&7Sell: &c$0.50"
+    buy-price: 1.0
+    sell-price: 0.5
+    amount: 1
+
+  - slot: 6
+    page: 1
+    material: WHEAT
+    name: "&e&lWheat"
+    lore:
+      - "&7Buy: &a$0.50"
+      - "&7Sell: &c$0.25"
+    buy-price: 0.5
+    sell-price: 0.25
+    amount: 1
+
+  - slot: 7
+    page: 1
+    material: BREAD
+    name: "&6&lBread"
+    lore:
+      - "&7Buy: &a$2.00"
+      - "&7Sell: &c$0.75"
+    buy-price: 2.0
+    sell-price: 0.75
+    amount: 1
+
+  - slot: 8
+    page: 1
+    material: APPLE
+    name: "&c&lApple"
+    lore:
+      - "&7Buy: &a$1.50"
+      - "&7Sell: &c$0.60"
+    buy-price: 1.5
+    sell-price: 0.6
+    amount: 1
+
+  # ---- Page 2 ----
+  - slot: 0
+    page: 2
+    material: COOKED_BEEF
+    name: "&c&lSteak"
+    lore:
+      - "&7Buy: &a$5.00"
+      - "&7Sell: &c$2.00"
+    buy-price: 5.0
+    sell-price: 2.0
+    amount: 1
+
+  - slot: 1
+    page: 2
+    material: BONE
+    name: "&f&lBone"
+    lore:
+      - "&7Buy: &a$1.00"
+      - "&7Sell: &c$0.50"
+    buy-price: 1.0
+    sell-price: 0.5
+    amount: 1
+
+  - slot: 2
+    page: 2
+    material: GUNPOWDER
+    name: "&8&lGunpowder"
+    lore:
+      - "&7Buy: &a$3.00"
+      - "&7Sell: &c$1.50"
+    buy-price: 3.0
+    sell-price: 1.5
+    amount: 1
+
+  - slot: 3
+    page: 2
+    material: ENDER_PEARL
+    name: "&5&lEnder Pearl"
+    lore:
+      - "&7Buy: &a$8.00"
+      - "&7Sell: &c$4.00"
+    buy-price: 8.0
+    sell-price: 4.0
+    amount: 1
+
+  - slot: 4
+    page: 2
+    material: BLAZE_ROD
+    name: "&6&lBlaze Rod"
+    lore:
+      - "&7Buy: &a$12.00"
+      - "&7Sell: &c$6.00"
+    buy-price: 12.0
+    sell-price: 6.0
+    amount: 1
+
+  # ---- Page 3 ----
+  - slot: 0
+    page: 3
+    material: NETHERITE_INGOT
+    name: "&8&lNetherite Ingot"
+    lore:
+      - "&7Buy: &a$200.00"
+      - "&7Sell: &c$100.00"
+    buy-price: 200.0
+    sell-price: 100.0
+    amount: 1
+
+  - slot: 1
+    page: 3
+    material: ANCIENT_DEBRIS
+    name: "&4&lAncient Debris"
+    lore:
+      - "&7Buy: &a$80.00"
+      - "&7Sell: &c$40.00"
+    buy-price: 80.0
+    sell-price: 40.0
+    amount: 1
+
+# Messages (supports color codes with &)
+messages:
+  buy-success: "&aYou bought &e{amount}x {item} &afor &6${price}&a!"
+  sell-success: "&aYou sold &e{amount}x {item} &afor &6${price}&a!"
+  not-enough-money: "&cYou don't have enough money! Need: &6${price}"
+  not-enough-items: "&cYou don't have enough items to sell!"
+  item-not-buyable: "&cThis item cannot be bought!"
+  item-not-sellable: "&cThis item cannot be sold!"
+  no-permission: "&cYou don't have permission to use this!"
+  reload-success: "&aConfig reloaded successfully!"

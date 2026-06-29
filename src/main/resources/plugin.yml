@@ -1,0 +1,22 @@
+name: SellerPlugin
+version: 1.0.0
+main: com.sellerplugin.SellerPlugin
+api-version: 1.20
+authors: [SellerPlugin]
+description: GUI Shop plugin with EssentialsX economy integration
+
+depend: [Essentials]
+
+commands:
+  seller:
+    description: Open the seller shop
+    usage: /seller
+    permission: sellerplugin.use
+
+permissions:
+  sellerplugin.use:
+    description: Allows player to open the seller
+    default: true
+  sellerplugin.admin:
+    description: Allows admin to reload config
+    default: op
