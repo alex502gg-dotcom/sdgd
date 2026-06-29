@@ -162,11 +162,13 @@ public class GuiListener implements Listener {
     }
 
     private String formatMaterial(Material mat) {
-        return ChatColor.stripColor(
-            mat.name().replace('_', ' ')
-               .toLowerCase()
-               .replaceAll("(^|\\s)(.)", m -> m.group(1) + m.group(2).toUpperCase())
-        );
+        String[] words = mat.name().toLowerCase().replace('_', ' ').split(" ");
+        StringBuilder sb = new StringBuilder();
+        for (String word : words) {
+            if (sb.length() > 0) sb.append(' ');
+            if (!word.isEmpty()) sb.append(Character.toUpperCase(word.charAt(0))).append(word.substring(1));
+        }
+        return ChatColor.stripColor(sb.toString());
     }
 
     private double safeDouble(String s) {
