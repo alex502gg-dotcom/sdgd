@@ -11,11 +11,11 @@ public class SellerPlugin extends JavaPlugin {
     private static SellerPlugin instance;
     private ShopConfig shopConfig;
     private EconomyManager economyManager;
+    private GuiListener guiListener;
 
     @Override
     public void onEnable() {
         instance = this;
-
         saveDefaultConfig();
 
         shopConfig = new ShopConfig(this);
@@ -28,8 +28,10 @@ public class SellerPlugin extends JavaPlugin {
             return;
         }
 
+        guiListener = new GuiListener(this);
+        getServer().getPluginManager().registerEvents(guiListener, this);
+
         getCommand("seller").setExecutor(new SellerCommand(this));
-        getServer().getPluginManager().registerEvents(new GuiListener(this), this);
 
         getLogger().info("SellerPlugin enabled successfully!");
     }
@@ -44,7 +46,8 @@ public class SellerPlugin extends JavaPlugin {
         shopConfig.load();
     }
 
-    public static SellerPlugin getInstance() { return instance; }
-    public ShopConfig getShopConfig()        { return shopConfig; }
-    public EconomyManager getEconomyManager(){ return economyManager; }
+    public static SellerPlugin getInstance()  { return instance; }
+    public ShopConfig getShopConfig()         { return shopConfig; }
+    public EconomyManager getEconomyManager() { return economyManager; }
+    public GuiListener getGuiListener()       { return guiListener; }
 }
