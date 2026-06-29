@@ -65,7 +65,8 @@ public class ShopConfig {
                     continue;
                 }
 
-                String name      = color(raw.getOrDefault("name", mat.name()).toString());
+                Object nameObj   = raw.get("name");
+                String name      = color(nameObj != null ? nameObj.toString() : mat.name());
                 double buyPrice  = toDouble(raw.get("buy-price"),  0);
                 double sellPrice = toDouble(raw.get("sell-price"), 0);
                 int    amount    = toInt(raw.get("amount"), 1);
