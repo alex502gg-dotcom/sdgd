@@ -25,17 +25,17 @@ jobs:
           cache: maven
 
       - name: Build with Maven
-        run: mvn -B package --file SellerPlugin/SellerPlugin/pom.xml
+        run: mvn -B package
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: SellerPlugin-${{ github.sha }}
-          path: SellerPlugin/SellerPlugin/target/SellerPlugin-*.jar
+          path: target/SellerPlugin-*.jar
           if-no-files-found: error
 
       - name: Upload to Release
         if: github.event_name == 'release'
         uses: softprops/action-gh-release@v2
         with:
-          files: SellerPlugin/SellerPlugin/target/SellerPlugin-*.jar
+          files: target/SellerPlugin-*.jar
