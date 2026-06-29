@@ -1,7 +1,6 @@
 package com.sellerplugin.commands;
 
 import com.sellerplugin.SellerPlugin;
-import com.sellerplugin.gui.ShopGui;
 import com.sellerplugin.listeners.GuiListener;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -49,17 +48,7 @@ public class SellerCommand implements CommandExecutor {
             try { page = Integer.parseInt(args[0]); } catch (NumberFormatException ignored) {}
         }
 
-        ShopGui gui = ((GuiListener) plugin.getServer()
-                .getPluginManager()
-                .getRegisteredListeners(plugin)
-                .stream()
-                .filter(r -> r.getListener() instanceof GuiListener)
-                .findFirst()
-                .orElseThrow(() -> new IllegalStateException("GuiListener not registered"))
-                .getListener())
-                .getGui();
-
-        gui.open(player, page);
+        plugin.getGuiListener().getGui().open(player, page);
         return true;
     }
 }
