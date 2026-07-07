@@ -212,3 +212,6 @@ messages:
   item-not-sellable: "&cThis item cannot be sold!"
   no-permission: "&cYou don't have permission to use this!"
   reload-success: "&aConfig reloaded successfully!"
+  auto-sell-success: "&aAuto-sold &e{amount}x &aitem(s) for &6${price}&a!"
+  auto-item-not-found: "&cSellable item #{item} was not found on page {page}."
+  auto-usage: "&cUsage: /seller auto or /seller auto [page] [item]"

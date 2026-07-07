@@ -10,13 +10,15 @@ depend: [Essentials]
 commands:
   seller:
     description: Open the seller shop
-    usage: /seller
-    permission: sellerplugin.use
+    usage: /seller [page|reload|auto]
 
 permissions:
   sellerplugin.use:
     description: Allows player to open the seller
     default: true
+  sellerplugin.auto:
+    description: Allows player to use /seller auto
+    default: op
   sellerplugin.admin:
     description: Allows admin to reload config
     default: op

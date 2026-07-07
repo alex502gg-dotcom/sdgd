@@ -27,6 +27,9 @@ public class ShopConfig {
     private String msgItemNotSellable;
     private String msgNoPermission;
     private String msgReloadSuccess;
+    private String msgAutoSellSuccess;
+    private String msgAutoItemNotFound;
+    private String msgAutoUsage;
 
     public ShopConfig(SellerPlugin plugin) {
         this.plugin = plugin;
@@ -49,6 +52,12 @@ public class ShopConfig {
         msgItemNotSellable = color(cfg.getString("messages.item-not-sellable","&cNot sellable!"));
         msgNoPermission    = color(cfg.getString("messages.no-permission",    "&cNo permission!"));
         msgReloadSuccess   = color(cfg.getString("messages.reload-success",   "&aReloaded!"));
+        msgAutoSellSuccess = color(cfg.getString("messages.auto-sell-success",
+                "&aAuto-sold &e{amount}x &aitem(s) for &6${price}&a!"));
+        msgAutoItemNotFound = color(cfg.getString("messages.auto-item-not-found",
+                "&cSellable item #{item} was not found on page {page}."));
+        msgAutoUsage = color(cfg.getString("messages.auto-usage",
+                "&cUsage: /seller auto or /seller auto [page] [item]"));
 
         // Items
         items.clear();
@@ -139,4 +148,7 @@ public class ShopConfig {
     public String getMsgItemNotSellable() { return msgItemNotSellable; }
     public String getMsgNoPermission()    { return msgNoPermission; }
     public String getMsgReloadSuccess()   { return msgReloadSuccess; }
+    public String getMsgAutoSellSuccess() { return msgAutoSellSuccess; }
+    public String getMsgAutoItemNotFound(){ return msgAutoItemNotFound; }
+    public String getMsgAutoUsage()       { return msgAutoUsage; }
 }
