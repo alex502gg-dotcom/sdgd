@@ -1,24 +1,29 @@
-name: SellerPlugin
+name: CustomEnchantments
 version: 1.0.0
-main: com.sellerplugin.SellerPlugin
-api-version: 1.20
-authors: [SellerPlugin]
-description: GUI Shop plugin with EssentialsX economy integration
-
-depend: [Essentials]
-
+main: ru.customenchants.CustomEnchantmentsPlugin
+api-version: '1.21'
+author: Codex
+description: Custom enchantments with external jar enchantment modules.
 commands:
-  seller:
-    description: Open the seller shop
-    usage: /seller [page|reload|auto]
-
+  emchantment:
+    description: Apply custom enchantment to the item in hand.
+    usage: /emchantment <name>
+    aliases: [cenchant]
+    permission: customenchants.command.emchantment
+  cenchantment:
+    description: Give a custom enchantment book.
+    usage: /cenchantment <name> [player]
+    permission: customenchants.command.cenchantment
 permissions:
-  sellerplugin.use:
-    description: Allows player to open the seller
-    default: true
-  sellerplugin.auto:
-    description: Allows player to use /seller auto
+  customenchants.command.emchantment:
+    description: Allows using /emchantment.
     default: op
-  sellerplugin.admin:
-    description: Allows admin to reload config
+  customenchants.command.cenchantment:
+    description: Allows using /cenchantment.
     default: op
+  customenchants.admin:
+    description: Allows all CustomEnchantments admin commands.
+    default: op
+    children:
+      customenchants.command.emchantment: true
+      customenchants.command.cenchantment: true
